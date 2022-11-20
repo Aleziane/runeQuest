@@ -1,6 +1,8 @@
 package be.mvannuff.compta.poseidon.app.fx.controller.caract;
 
 import be.mvannuff.compta.poseidon.app.domain.perso.caract.Caract;
+import be.mvannuff.compta.poseidon.app.domain.perso.caract.derived.BonusDeg;
+import be.mvannuff.compta.poseidon.app.domain.perso.caract.derived.Pv;
 import be.mvannuff.compta.poseidon.app.service.DataHolder;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -30,6 +32,12 @@ public class CaractViewModel {
     private final IntegerProperty apparence = new SimpleIntegerProperty();
 
     private final StringProperty bonusDeg_bonus = new SimpleStringProperty();
+    private final StringProperty pv_arms = new SimpleStringProperty();
+    private final StringProperty pv_legs = new SimpleStringProperty();
+    private final StringProperty pv_head = new SimpleStringProperty();
+    private final StringProperty pv_chest = new SimpleStringProperty();
+    private final StringProperty pv_belly = new SimpleStringProperty();
+
 
     public CaractViewModel(DataHolder dataHolder) {
         this.dataHolder = dataHolder;
@@ -44,7 +52,7 @@ public class CaractViewModel {
         apparence.addListener(listener(apparence, (v) -> dataHolder.getCaract().setApparence(v.intValue())));
     }
 
-    public void update(Caract newCaract){
+    public void update(Caract newCaract) {
         force.set(newCaract.getForce());
         constitution.set(newCaract.getConstitution());
         taille.set(newCaract.getTaille());
@@ -52,7 +60,6 @@ public class CaractViewModel {
         pouvoir.set(newCaract.getPouvoir());
         dexterite.set(newCaract.getDexterite());
         apparence.set(newCaract.getApparence());
-        bonusDeg_bonus.set(newCaract.getBonusDeg());
     }
 
     private <T> ChangeListener<T> listener(WritableValue<T> value, Consumer<T> updater) {
@@ -60,7 +67,12 @@ public class CaractViewModel {
             //good to have validation there
             value.setValue(newValue);
             updater.accept(newValue);
-            bonusDeg_bonus.set(dataHolder.getCaract().getBonusDeg());
+            bonusDeg_bonus.set(BonusDeg.bonusDeg(dataHolder.getCaract()));
+            pv_arms.set(Pv.pvArms(dataHolder.getCaract()).toString());
+            pv_legs.set(Pv.pvLegs(dataHolder.getCaract()).toString());
+            pv_head.set(Pv.pvHead(dataHolder.getCaract()).toString());
+            pv_chest.set(Pv.pvChest(dataHolder.getCaract()).toString());
+            pv_belly.set(Pv.pvBelly(dataHolder.getCaract()).toString());
         };
     }
 }

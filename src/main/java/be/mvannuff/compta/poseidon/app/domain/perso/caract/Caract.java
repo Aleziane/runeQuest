@@ -24,7 +24,4 @@ public class Caract {
         this(0, 0, 0, 0, 0, 0, 0);
     }
 
-    public String getBonusDeg(){
-        return BonusDeg.bonusDeg(force);
-    }
 }

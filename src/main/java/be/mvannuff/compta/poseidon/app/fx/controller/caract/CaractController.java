@@ -10,7 +10,6 @@ import be.mvannuff.compta.poseidon.app.fx.router.Routable;
 import be.mvannuff.compta.poseidon.app.fx.router.Route;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -53,6 +52,22 @@ public class CaractController extends AbstractController implements Routable {
     @FXML
     private Label bonusDeg;
 
+
+    @FXML
+    private Label pv_arms1;
+    @FXML
+    private Label pv_arms2;
+    @FXML
+    private Label pv_legs1;
+    @FXML
+    private Label pv_legs2;
+    @FXML
+    private Label pv_head;
+    @FXML
+    private Label pv_chest;
+    @FXML
+    private Label pv_belly;
+
     @FXML
     public void initialize() {
         registerComboboxValue();
@@ -61,9 +76,9 @@ public class CaractController extends AbstractController implements Routable {
 
     @FXML
     void randomize(ActionEvent event) {
-       var randomizer =  powerCB.getValue().getValue();
-       var archetype =  archetypeCB.getValue().getValue();
-       //Null check plz
+        var randomizer = powerCB.getValue().getValue();
+        var archetype = archetypeCB.getValue().getValue();
+        //Null check plz
         var newCaract = randomService.randomizeCaract(randomizer, archetype);
         caractViewModel.update(newCaract);
     }
@@ -73,7 +88,7 @@ public class CaractController extends AbstractController implements Routable {
         return Route.CARACT;
     }
 
-    private void binds(){
+    private void binds() {
         force.textProperty().bindBidirectional(caractViewModel.getForce(), new NumberStringConverter());
         intel.textProperty().bindBidirectional(caractViewModel.getIntelligence(), new NumberStringConverter());
         tai.textProperty().bindBidirectional(caractViewModel.getTaille(), new NumberStringConverter());
@@ -81,6 +96,14 @@ public class CaractController extends AbstractController implements Routable {
         app.textProperty().bindBidirectional(caractViewModel.getApparence(), new NumberStringConverter());
         pou.textProperty().bindBidirectional(caractViewModel.getPouvoir(), new NumberStringConverter());
         dex.textProperty().bindBidirectional(caractViewModel.getDexterite(), new NumberStringConverter());
+
+        pv_arms1.textProperty().bind(caractViewModel.getPv_arms());
+        pv_arms2.textProperty().bind(caractViewModel.getPv_arms());
+        pv_legs1.textProperty().bind(caractViewModel.getPv_legs());
+        pv_legs2.textProperty().bind(caractViewModel.getPv_legs());
+        pv_head.textProperty().bind(caractViewModel.getPv_head());
+        pv_chest.textProperty().bind(caractViewModel.getPv_chest());
+        pv_belly.textProperty().bind(caractViewModel.getPv_belly());
         bonusDeg.textProperty().bind(caractViewModel.getBonusDeg_bonus());
     }
 

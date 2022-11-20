@@ -9,25 +9,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="839.0" prefWidth="1485.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="be.mvannuff.compta.poseidon.app.fx.controller.caract.CaractController">
+<AnchorPane prefHeight="839.0" prefWidth="1485.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.mvannuff.compta.poseidon.app.fx.controller.caract.CaractController">
    <children>
       <ImageView fitHeight="654.0" fitWidth="800.0" layoutX="-1.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/carac.png" />
          </image>
       </ImageView>
-      <TextField fx:id="force" layoutX="114.0" layoutY="136.0"  prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0">
+      <TextField fx:id="force" layoutX="114.0" layoutY="136.0" prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0" userData="force">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="intel" layoutX="114.0" layoutY="339.0"  prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0">
+      <TextField fx:id="intel" layoutX="114.0" layoutY="339.0" prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="tai" layoutX="114.0" layoutY="272.0"  prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0">
+      <TextField fx:id="tai" layoutX="114.0" layoutY="272.0" prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0">
          <font>
             <Font size="18.0" />
          </font>
@@ -37,17 +36,17 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="app" layoutX="114.0" layoutY="543.0"  prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0">
+      <TextField fx:id="app" layoutX="114.0" layoutY="543.0" prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="pou" layoutX="114.0" layoutY="408.0"  prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0">
+      <TextField fx:id="pou" layoutX="114.0" layoutY="408.0" prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="dex" layoutX="114.0" layoutY="475.0"   prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0">
+      <TextField fx:id="dex" layoutX="114.0" layoutY="475.0" prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #90f59c;" text="0">
          <font>
             <Font size="18.0" />
          </font>
@@ -87,37 +86,37 @@
             <Image url="@../img/pv.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="159.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
+      <Label fx:id="pv_legs1" alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="159.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="603.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
+      <Label fx:id="pv_head" alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="603.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="530.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
+      <Label fx:id="pv_arms2" alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="530.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="460.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
+      <Label fx:id="pv_arms1" alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="460.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="386.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
+      <Label fx:id="pv_chest" alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="386.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="317.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
+      <Label  fx:id="pv_belly"  alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="317.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="242.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
+      <Label fx:id="pv_legs2" alignment="CENTER" contentDisplay="CENTER" layoutX="1355.0" layoutY="242.0" prefHeight="45.0" prefWidth="110.0" text="0" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
